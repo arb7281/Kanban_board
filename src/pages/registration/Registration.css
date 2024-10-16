@@ -1,0 +1,18 @@
+.label-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: left;
+  }
+  
+  @media (max-width: 576px) {
+    .label-col {
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+
+  .reg{
+    margin-top: 55px;
+  }
+  

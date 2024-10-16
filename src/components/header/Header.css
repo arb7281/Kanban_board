@@ -1,0 +1,45 @@
+.Header-wrapper {
+    background-color: blue;
+    height: 100%;
+    /* width: 80%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .Header-wrapper h1 {
+    height: 64px;
+    pointer-events: none;
+  }
+
+  .profile-dropdown {
+    background-color: blue;
+    border: none;
+  }
+
+  
+
+  
+  .profile-dropdown .profile-image {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  .innerDiv{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .projectName{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }

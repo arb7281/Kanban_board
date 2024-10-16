@@ -1,0 +1,15 @@
+/* Aligns labels to the left for all screen sizes */
+.text-md-end {
+    text-align: right;
+  }
+  
+  @media (max-width: 576px) {
+    .text-md-end {
+      text-align: left;
+    }
+  }
+  
+
+  /* .logn{
+    margin-top: -50px;
+  } */
