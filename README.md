@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# Kanban Board Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Kanban Board project built using React. The project allows users to create, update, and manage tasks across different lanes (Backlog, To Do, In Progress, Done). It utilizes a JSON server for handling the backend data.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Task Management**: Add, edit, and delete tasks.
+- **Drag-and-Drop Functionality**: Easily move tasks between lanes.
+- **Persistent Data**: Tasks are stored in a JSON server and persist across sessions.
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. [Setup Instructions](#setup-instructions)
+2. [Running the JSON Server](#running-the-json-server)
+3. [Running the React Application](#running-the-react-application)
+4. [Technologies Used](#technologies-used)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup Instructions
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have the following installed on your machine:
 
-### `npm run build`
+- [Node.js](https://nodejs.org/) (v14 or above)
+- [npm](https://www.npmjs.com/) (v6 or above)
+- [Git](https://git-scm.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running the JSON Server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The JSON server is used to mock the backend API. It provides RESTful routes for our tasks and users.
 
-### `npm run eject`
+### Step 1: Install JSON Server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+First, install the JSON server globally using npm:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install -g json-server
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Step 2: Set Up JSON Server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigate to the project directory and start the JSON server:
 
-## Learn More
+```bash
+json-server --watch db.json --port 3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This will start the JSON server on http://localhost:3000, and it will serve the data from the db.json file.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### db.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The `db.json` file contains the initial data for your Kanban board. You can customize this file to include different tasks and properties as needed. Here’s an example of what your `db.json` file might look like:
 
-### Analyzing the Bundle Size
+```json
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "amit bhoir",
+      "password": "1234",
+      "email": "arb7281@gmail.com"
+    },
+    {
+      "id": "2",
+      "username": "sumit bhoir",
+      "password": "5678",
+      "email": "srb7281@gmail.com"
+    },
+    ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Design the landing page",
+      "lane": "2",
+      "priority": "High",
+      "deadlineDate": "2024-09-01",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Develop the authentication module",
+      "lane": "3",
+      "priority": "Medium",
+      "deadlineDate": "2024-09-10",
+      "userId": 2
+    }
+    // Add more tasks here
+  ]
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Running the React Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Once the JSON server is running, you can start the React application.
 
-### Advanced Configuration
+### Step 1: Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+If you haven't already, install the required npm packages by running:
 
-### Deployment
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Step 2: Start the React Application
 
-### `npm run build` fails to minify
+Start the development server:
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This will start the React application on http://localhost:3001. The app will automatically connect to the JSON server running on port 3000.
+
+## Technologies Used
+
+- **React**
+- **React Bootstrap**
+- **Redux Toolkit**
+- **JSON Server**
+
+
+
