@@ -47,7 +47,7 @@ export const loginUser = createAsyncThunk('auth/loginUser', async (credentials) 
           state.isLoggedIn = false
       },
       setIsLoggedIn(state, value){
-        state.isLoggedIn = value.action
+        state.isLoggedIn = value.payload
       }
     },
     extraReducers: (builder) => {
